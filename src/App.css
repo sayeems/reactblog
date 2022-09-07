@@ -84,3 +84,15 @@
 .appBody {
   padding: 0px 10px;
 }
+
+.single h1.single-title {
+  border-bottom: 2px solid rgb(0, 144, 192);
+  padding-bottom: 5px;
+  font-size: 40px;
+}
+
+.single-content {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  padding: 0px 30px;
+}
