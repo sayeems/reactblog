@@ -10,12 +10,20 @@ const Posts = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const data = await axios.get(
-        // TODO: abstract the url with environment variables
-        `https://dev-reactblog-be.pantheonsite.io/wp-json/wp/v2/posts?_embed`
+      // const data = await axios.get(
+      //   // TODO: abstract the url with environment variables
+      //   `https://live-reactblog-be.pantheonsite.io/wp-json/wp/v2/posts?_embed`
+      // );
+      const response = await fetch(
+        "https://live-reactblog-be.pantheonsite.io/wp-json/wp/v2/posts?_embed",
+        {
+          method: "GET",
+          headers: { "Content-type": "application/json" },
+          withCredentials: false,
+        }
       );
-      setPosts(data.data);
-      console.log(data.data);
+      const data = await response.json();
+      setPosts(data);
       setLoading(false);
     };
     fetchPosts();
