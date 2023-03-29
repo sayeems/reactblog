@@ -13,7 +13,7 @@ const Post = () => {
       setloading(true);
       // TODO: use environment variables
       const data = await axios.get(
-        `https://dev-reactblog-be.pantheonsite.io/wp-json/wp/v2/posts?slug=${param.slug}&_embed`
+        `https://live-reactblog-be.pantheonsite.io/wp-json/wp/v2/posts?slug=${param.slug}&_embed`
       );
       // set data
       setData(data.data[0]);
